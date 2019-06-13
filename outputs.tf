@@ -6,3 +6,6 @@ output "MGT-IP-FW-2" {
   value = "${aws_eip.FW2-MGT.public_ip}"
 }
 
+output "ALB-DNS" {
+  value = "${aws_lb.ext-alb.dns_name}"
+}
