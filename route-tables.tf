@@ -12,10 +12,25 @@ resource "aws_route_table" "public" {
   }
 }
 
-resource "aws_route_table" "private" {
+resource "aws_route_table" "private-AZ1" {
   vpc_id = "${aws_vpc.main.id}"
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    network_interface_id = "${aws_network_interface.FW1-TRUST.id}"
+  }
+
 }
 
+resource "aws_route_table" "private-AZ2" {
+  vpc_id = "${aws_vpc.main.id}"
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    network_interface_id = "${aws_network_interface.FW2-TRUST.id}"
+  }
+
+}
 # Association
 
 resource "aws_route_table_association" "subnetroute1" {
@@ -29,11 +44,22 @@ resource "aws_route_table_association" "subnetroute2" {
 }
 
 resource "aws_route_table_association" "subnetroute3" {
+  subnet_id      = "${aws_subnet.AZ1-TRUST.id}"
+  route_table_id = "${aws_route_table.private-AZ1.id}"
+}
+
+
+resource "aws_route_table_association" "subnetroute4" {
   subnet_id      = "${aws_subnet.AZ2-UNTRUST.id}"
   route_table_id = "${aws_route_table.public.id}"
 }
 
-resource "aws_route_table_association" "subnetroute4" {
+resource "aws_route_table_association" "subnetroute5" {
   subnet_id      = "${aws_subnet.AZ2-MGT.id}"
   route_table_id = "${aws_route_table.public.id}"
+}
+
+resource "aws_route_table_association" "subnetroute6" {
+  subnet_id      = "${aws_subnet.AZ2-TRUST.id}"
+  route_table_id = "${aws_route_table.private-AZ2.id}"
 }
