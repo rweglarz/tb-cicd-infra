@@ -24,7 +24,7 @@ resource "aws_instance" "web1" {
   user_data = "${base64encode(join("", list(
    "#! /bin/bash\n",
            "echo Webserver1 > index.html && nohup busybox httpd -f -p 80",
-           "until $(curl -sSL -k --output /dev/null --silent --head --fail https://jenkins.minimal.net.au:8083); do printf '.' sleep 5 done",
+           "until $(curl -sSL -k --output /dev/null --silent --head --fail https://jenkins.minimal.net.au:8083); do printf '.' sleep 5 done ",
            "curl -sSL -k --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGhiZWF1bW9udEBwYWxvYWx0b25ldHdvcmtzLmNvbSIsInJvbGUiOiJhZG1pbiIsImdyb3VwcyI6bnVsbCwicHJvamVjdHMiOm51bGwsInNlc3Npb25UaW1lb3V0U2VjIjo4NjQwMCwiZXhwIjoxNTY2OTg4NTU3LCJpc3MiOiJ0d2lzdGxvY2sifQ.aAUW-AdIUJU3y1g3-Y3s6jW574rmpKfHsG9NXC01v_Q' https://jenkins.minimal.net.au:8083/api/v1/scripts/defender.sh | sudo bash -s -- -c 'jenkins.minimal.net.au' -d 'none'  --install-host"
    )))
    }"
@@ -58,7 +58,7 @@ resource "aws_instance" "web2" {
   user_data = "${base64encode(join("", list(
     "#! /bin/bash\n",
            "echo Webserver2 > index.html && nohup busybox httpd -f -p 80",
-           "until $(curl -sSL -k --output /dev/null --silent --head --fail https://jenkins.minimal.net.au:8083); do printf '.' sleep 5 done",
+           "until $(curl -sSL -k --output /dev/null --silent --head --fail https://jenkins.minimal.net.au:8083); do printf '.' sleep 5 done ",
            "curl -sSL -k --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGhiZWF1bW9udEBwYWxvYWx0b25ldHdvcmtzLmNvbSIsInJvbGUiOiJhZG1pbiIsImdyb3VwcyI6bnVsbCwicHJvamVjdHMiOm51bGwsInNlc3Npb25UaW1lb3V0U2VjIjo4NjQwMCwiZXhwIjoxNTY2OTg4NTU3LCJpc3MiOiJ0d2lzdGxvY2sifQ.aAUW-AdIUJU3y1g3-Y3s6jW574rmpKfHsG9NXC01v_Q' https://jenkins.minimal.net.au:8083/api/v1/scripts/defender.sh | sudo bash -s -- -c 'jenkins.minimal.net.au' -d 'none'  --install-host"
     )))
     }"
