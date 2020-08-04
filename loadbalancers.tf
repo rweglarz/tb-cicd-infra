@@ -52,7 +52,7 @@ resource "aws_lb_listener_rule" "static" {
   }
 
   condition {
-    path-pattern = "/*"
+    path_pattern = "/*"
   }
 }
 
