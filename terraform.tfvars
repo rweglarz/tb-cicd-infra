@@ -12,4 +12,4 @@ aws_region = "eu-west-2"
 
 ServerKeyName = "tom-london"
 
-MasterS3Bucket = "pan-bootstrap-tom"
+MasterS3Bucket = "panos-bootstrap-tom"
