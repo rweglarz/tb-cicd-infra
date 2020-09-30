@@ -19,7 +19,7 @@ variable "PANFWRegionMap" {
     "ap-southeast-2" = "ami-10303673"
     "eu-central-1"   = "ami-e93df486"
     "eu-west-1"      = "ami-43f1aa25"
-    "eu-west-2"      = "ami-0cea9a41443754f56"
+    "eu-west-2"      = "ami-0fe50e0a7cd0b30ef"
     "sa-east-1"      = "ami-12b4d07e"
     "us-east-1"      = "ami-2127dc37"
     "us-east-2"      = "ami-810d28e4"
