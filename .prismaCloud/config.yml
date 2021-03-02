@@ -7,7 +7,7 @@
 
 						# For Terraform, it is recommended to provide one of the following values: 0.11, 0.12, 0.13,or 0.14.
 						# For CFT and K8s, this can be omitted.
-						template_version: 0.11
+						template_version: 0.12
 
 						# For your template_type, fill in the details where applicable.
 						# variables: Specify any environment variables(TF) or parameters(CFT) as key:value pairs under this attribute.
@@ -16,14 +16,14 @@
 						# variable_files: For a custom extension, specify the variable file path from the root of the repo.
 						template_parameters:
 						variables:
-						key1 : value1
-						key2 : value2
+						#key1 : value1
+						#key2 : value2
 						variable_files:
-						- ./filepath/filename1
-						- ./filepath/filename2
+						#- ./filepath/filename1
+						#- ./filepath/filename2
 
 						# Define tags to identify your particular scan. You can use these tags to search the scan details on the Prisma Cloud.
 						tags:
-						org: Engineering
-						team: Shift_Left
+						org: tbeaumont
+						team: Shift_Left_tbeaumont
 					
