@@ -17,8 +17,6 @@ chmod 2775 /var/www
 find /var/www -type d -exec chmod 2775 {} \;
 find /var/www -type f -exec chmod 0664 {} \;
 echo "Webserver 1" > /var/www/html/index.html
-until $(curl -sSL -k --output /dev/null --silent --head --fail https://jenkins.minimal.net.au:8083); sleep 5; done
-curl -sSL -k --header "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGhiZWF1bW9udEBwYWxvYWx0b25ldHdvcmtzLmNvbSIsInJvbGUiOiJhZG1pbiIsImdyb3VwcyI6bnVsbCwicHJvamVjdHMiOm51bGwsInNlc3Npb25UaW1lb3V0U2VjIjo4NjQwMCwiZXhwIjoxNTY3MTExNDQwLCJpc3MiOiJ0d2lzdGxvY2sifQ.GvD5tq5budWB3w69YvL5GEm7Ly2WC2iWJJIwiWgWBBI" https://jenkins.minimal.net.au:8083/api/v1/scripts/defender.sh | sudo bash -s -- -c "jenkins.minimal.net.au" -d "none"  --install-host
 EOF
 }
 
@@ -33,8 +31,6 @@ chmod 2775 /var/www
 find /var/www -type d -exec chmod 2775 {} \;
 find /var/www -type f -exec chmod 0664 {} \;
 echo "Webserver 2" > /var/www/html/index.html
-until $(curl -sSL -k --output /dev/null --silent --head --fail https://jenkins.minimal.net.au:8083); sleep 5; done
-curl -sSL -k --header "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGhiZWF1bW9udEBwYWxvYWx0b25ldHdvcmtzLmNvbSIsInJvbGUiOiJhZG1pbiIsImdyb3VwcyI6bnVsbCwicHJvamVjdHMiOm51bGwsInNlc3Npb25UaW1lb3V0U2VjIjo4NjQwMCwiZXhwIjoxNTY3MTExNDQwLCJpc3MiOiJ0d2lzdGxvY2sifQ.GvD5tq5budWB3w69YvL5GEm7Ly2WC2iWJJIwiWgWBBI" https://jenkins.minimal.net.au:8083/api/v1/scripts/defender.sh | sudo bash -s -- -c "jenkins.minimal.net.au" -d "none"  --install-host
 EOF
 }
 
