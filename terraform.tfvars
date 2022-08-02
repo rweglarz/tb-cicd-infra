@@ -10,6 +10,6 @@ VPCCIDR = "10.0.0.0/16"
 
 aws_region = "eu-west-2"
 
-ServerKeyName = "tom-london"
+ServerKeyName = "rweglarz"
 
 MasterS3Bucket = "panos-bootstrap-tom2"
